@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  springboot-app:
+    image: rajdeepsahoo123/cloudnative:0.0.7  # Replace with your app's image
+    container_name: springboot-app
+    ports:
+      - "8080:8080"   # Exposing the Spring Boot app directly for testing if needed
+
+  envoy-sidecar:
+    image: envoyproxy/envoy:v1.33.0
+    container_name: envoy-sidecar
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml # Mount your Envoy config
+    ports:
+      - "9901:9901" #admin port
+      - "10000:10000"  # Port Envoy listens on
+    depends_on:
+      - springboot-app
