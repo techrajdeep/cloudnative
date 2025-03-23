@@ -1,5 +1,8 @@
 # Getting Started
 #### This is demo project for testing sidecar pattern , we have used application container built using spring boot and envoy as side-car container.
+* What is envoy proxy? => L7 proxy (Application layer , reverse proxy[sits b/w client and server, where as proxy sits b/w client and internet for controlling access to specif website]) deals with application specific protocols like gRPC, HTTP,WebSocket etc.Performs content aware routing ie. it can route traffic based on URL paths ,http headers ,query params or even request body content(i.e based on the content of the incoming requests rather than the low level information like IP address or ports). 
+In contrast an L4 proxy( Nginx in TCP mode;Transport layer; handles TCP, UDP etc.)  would only route traffic base on IP address and ports without understanding HTTP semantics.
+* Enables load balancing , circuit breaking , rate limiting , authentication , observability , service discovery, advanced traffic control etc.
 * Concepts you should know : api gateway vs sidecar (adv , disadv)
 <ol>
 <li> Scope=> sidecar: inter service , gateway:External API </li>
@@ -26,9 +29,12 @@
     <li> TLS termination</li>
     <li> Http/2 and gRPC proxies</li>
     <li> Circuit breakers</li>
+    <li> Rate limiting</li>
     <li> Health check</li>
-    <li> Staged rollout with %-based traffic split</li>
-    <li> Fault injection</li>
+    <li> Staged rollout with %-based traffic split(canary releases)</li>
+    <li> Fault injection(can deliberately inject delays or errors to test system's resilience )</li>
+    <li> Outlier detection (can detect  unhealthy endpoints and automatically eject them from LB pool)</li>
+    <li> gRPC support</li>
     <li> Rich metrics</li>
 </ol>
 
@@ -54,6 +60,21 @@
 * docker push rajdeepsahoo123/cloudnative:0.0.7
 *  docker-compose up --build -d
 *  docker-compose down
+
+### Best Practices for Traffic Spike Protection
+✅ Combine Circuit Breaking + Outlier Detection for improved resilience
+Why? If a service becomes slow or overwhelmed, Envoy will stop sending new requests to protect upstream systems
+Why? Outlier detection ensures traffic is redirected to healthy instances during partial failures.
+✅ Use Rate Limiting to throttle abusive traffic sources
+Why? Rate limiting ensures fair usage and protects backend services from excessive traffic.
+✅ Configure Retries with timeout limits to avoid retry storms
+Why? Retry policies improve reliability by giving services extra chances to recover during brief disruptions.
+✅ Set Load Shedding priorities to safeguard mission-critical services
+Why? Prioritizing essential traffic ensures that core services remain functional during high load.
+✅ Use monitoring tools (like Prometheus, Grafana, or Envoy’s admin interface) to track traffic trends and adjust limits as needed
+
+
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
