@@ -87,6 +87,15 @@ Best For->High-performance load balancing and connection handling
 ### Envoy: Perfect for modern microservices, Kubernetes environments, and dynamic traffic management.
 Best For->Modern microservices architecture and service mesh solutions
 
+### Best Choices by Scenario
+L4 Traffic (Pure TCP/UDP load balancing): → HAProxy or Envoy
+
+L7 Traffic (HTTP-aware routing, content-based switching): → Nginx, HAProxy, or Envoy
+
+Microservices (dynamic service discovery, advanced routing): → Envoy
+
+
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
