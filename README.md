@@ -5,6 +5,9 @@
 In contrast an L4 proxy( Nginx in TCP mode;Transport layer; handles TCP, UDP etc.)  would only route traffic base on IP address and ports without understanding HTTP semantics.
 * Enables load balancing , circuit breaking , rate limiting , authentication , observability , service discovery, advanced traffic control etc.
 * Concepts you should know : api gateway vs sidecar (adv , disadv) [Link](https://blog.christianposta.com/microservices/do-i-need-an-api-gateway-if-i-have-a-service-mesh/)
+
+[How Netflix uses service mesh](https://blog.quastor.org/p/netflix-integrated-service-mesh-backend)
+
 <ol>
 <li> Scope=> sidecar: inter service , gateway:External API </li>
 <li> Deployment=> sidecar: inter service , gateway:External API </li>
