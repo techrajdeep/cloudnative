@@ -74,7 +74,14 @@ Why? Retry policies improve reliability by giving services extra chances to reco
 Why? Prioritizing essential traffic ensures that core services remain functional during high load.
 ✅ Use monitoring tools (like Prometheus, Grafana, or Envoy’s admin interface) to track traffic trends and adjust limits as needed
 
+Nginx: Ideal for traditional web applications, static content delivery, and reverse proxying.
+Best For->Web server + reverse proxy + load balancing combo
 
+HAProxy: Excellent for high-performance environments with simple yet powerful load balancing needs.
+Best For->High-performance load balancing and connection handling
+
+Envoy: Perfect for modern microservices, Kubernetes environments, and dynamic traffic management.
+Best For->Modern microservices architecture and service mesh solutions
 
 ### Reference Documentation
 For further reference, please consider the following sections:
