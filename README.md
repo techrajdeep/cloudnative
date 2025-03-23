@@ -7,6 +7,7 @@ In contrast an L4 proxy( Nginx in TCP mode;Transport layer; handles TCP, UDP etc
 * Concepts you should know : api gateway vs sidecar (adv , disadv) [Link](https://blog.christianposta.com/microservices/do-i-need-an-api-gateway-if-i-have-a-service-mesh/)
 
 [How Netflix uses service mesh](https://blog.quastor.org/p/netflix-integrated-service-mesh-backend)
+
 [Netflix blog : service mesh](https://netflixtechblog.com/zero-configuration-service-mesh-with-on-demand-cluster-discovery-ac6483b52a51)
 
 <ol>
