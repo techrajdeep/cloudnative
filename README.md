@@ -66,21 +66,25 @@ In contrast an L4 proxy( Nginx in TCP mode;Transport layer; handles TCP, UDP etc
 ✅ Combine Circuit Breaking + Outlier Detection for improved resilience
 Why? If a service becomes slow or overwhelmed, Envoy will stop sending new requests to protect upstream systems
 Why? Outlier detection ensures traffic is redirected to healthy instances during partial failures.
+
 ✅ Use Rate Limiting to throttle abusive traffic sources
 Why? Rate limiting ensures fair usage and protects backend services from excessive traffic.
+
 ✅ Configure Retries with timeout limits to avoid retry storms
 Why? Retry policies improve reliability by giving services extra chances to recover during brief disruptions.
+
 ✅ Set Load Shedding priorities to safeguard mission-critical services
 Why? Prioritizing essential traffic ensures that core services remain functional during high load.
+
 ✅ Use monitoring tools (like Prometheus, Grafana, or Envoy’s admin interface) to track traffic trends and adjust limits as needed
 
-Nginx: Ideal for traditional web applications, static content delivery, and reverse proxying.
+### Nginx: Ideal for traditional web applications, static content delivery, and reverse proxying.
 Best For->Web server + reverse proxy + load balancing combo
 
-HAProxy: Excellent for high-performance environments with simple yet powerful load balancing needs.
+### HAProxy: Excellent for high-performance environments with simple yet powerful load balancing needs.
 Best For->High-performance load balancing and connection handling
 
-Envoy: Perfect for modern microservices, Kubernetes environments, and dynamic traffic management.
+### Envoy: Perfect for modern microservices, Kubernetes environments, and dynamic traffic management.
 Best For->Modern microservices architecture and service mesh solutions
 
 ### Reference Documentation
