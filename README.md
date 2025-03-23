@@ -1,10 +1,10 @@
 # Getting Started
 #### This is demo project for testing sidecar pattern , we have used application container built using spring boot and envoy as side-car container.
-* [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/what_is_envoy)
+* [Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/what_is_envoy) , Also read Nginx vs HAproxy vs Envoy [link](https://www.getambassador.io/learn/envoy-proxy) , [Read](https://blog.christianposta.com/microservices/01-microservices-patterns-with-envoy-proxy-part-i-circuit-breaking/)
 * What is envoy proxy? => L7 proxy (Application layer , reverse proxy[sits b/w client and server, where as proxy sits b/w client and internet for controlling access to specif website]) deals with application specific protocols like gRPC, HTTP,WebSocket etc.Performs content aware routing ie. it can route traffic based on URL paths ,http headers ,query params or even request body content(i.e based on the content of the incoming requests rather than the low level information like IP address or ports). 
 In contrast an L4 proxy( Nginx in TCP mode;Transport layer; handles TCP, UDP etc.)  would only route traffic base on IP address and ports without understanding HTTP semantics.
 * Enables load balancing , circuit breaking , rate limiting , authentication , observability , service discovery, advanced traffic control etc.
-* Concepts you should know : api gateway vs sidecar (adv , disadv)
+* Concepts you should know : api gateway vs sidecar (adv , disadv) [Link](https://blog.christianposta.com/microservices/do-i-need-an-api-gateway-if-i-have-a-service-mesh/)
 <ol>
 <li> Scope=> sidecar: inter service , gateway:External API </li>
 <li> Deployment=> sidecar: inter service , gateway:External API </li>
