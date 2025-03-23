@@ -10,6 +10,8 @@ In contrast an L4 proxy( Nginx in TCP mode;Transport layer; handles TCP, UDP etc
 
 [Netflix blog : service mesh](https://netflixtechblog.com/zero-configuration-service-mesh-with-on-demand-cluster-discovery-ac6483b52a51)
 
+[Netflix OSS to istio](https://dzone.com/articles/microservices-journey-from-netflix-oss-to-istio-se)
+
 <ol>
 <li> Scope=> sidecar: inter service , gateway:External API </li>
 <li> Deployment=> sidecar: inter service , gateway:External API </li>
